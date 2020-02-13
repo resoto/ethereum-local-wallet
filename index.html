@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>シンプルウォレット</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" media="all" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="./dist/keythereum.min.js"></script>
+<script src="./dist/web3.min.js"></script>
+<script src="./dist/ethereumjs-tx.js"></script>
+<!--
+<script src="https://cdn.rawgit.com/ethereumjs/keythereum/622b3a4b/dist/keythereum.min.js"></script>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/1.0/dist/web3.min.js"></script>
+<script src="https://cdn.rawgit.com/ethereumjs/browser-builds/2fb69a714afe092b06645286f14b94f41e5c062c/dist/ethereumjs-tx.js"></script>
+-->
+
+
+</head>
+
+<body>
+<div class="container">
+
+<h2>シンプルウォレット</h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<button type="button" class="btn btn-default btn-primary" id="go">送金（イーサ）</button>
+<button type="button" class="btn btn-default btn-primary" id="go2">送金（トークン）</button>
+<button type="button" class="btn btn-default btn-primary" id="check">開く（JSON）</button>
+<button type="button" class="btn btn-default btn-primary" id="check2">開く（Key）</button>
+<button type="button" class="btn btn-default btn-primary" id="update">更新</button>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>JSONファイル：
+<input type="file">
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="row">
+<div class="col-sm-4"><label>address</label></div>
+<div class="col-sm-8"><input type="text" size = "48" id="address"/></div>
+<br>
+<hr>
+<div class="col-sm-4"><label>private key</label></div>
+<div class="col-sm-8"><input type="password" size = "48" id="private_key"/></div>
+<br>
+<hr>
+<div class="col-sm-4"><label>gas price(wei) / gas limit</label></div>
+<div class="col-sm-8"><input type="text" id="gass_price" value="10000000000000"/><input type="text" id="gass_limit" value="196608"/></div>
+</div>
+</div>
+</div>
+
+
+<div class="panel panel-default">
+<table class="table table-striped" id = "tableBalance">
+<thead>
+<tr>
+<th>#</th>
+        <th>名前</th>
+        <th>シンボル</th>
+        <th>残高</th>
+         <th>ERC20設定</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+          <td>Ether</td>
+          <td>ETH</td>
+          <td></td>
+          <td>ー</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th><button type="button" class="btn btn-default btn-xs" id = "addButton2">追加</button><button type="button" class="btn btn-default btn-xs" id = "delButton2">削除</button></th>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th><button type="button" class="btn btn-default btn-xs" id = "addButton3">追加</button><button type="button" class="btn btn-default btn-xs" id = "delButton3">削除</button></th>
+          
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+          <td></td>
+          <td></td>
+          <td></td>
+         <th><button type="button" class="btn btn-default btn-xs" id = "addButton4">追加</button><button type="button" class="btn btn-default btn-xs" id = "delButton4">削除</button></th>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th><button type="button" class="btn btn-default btn-xs" id = "addButton5">追加</button><button type="button" class="btn btn-default btn-xs" id = "delButton5">削除</button></th>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+
+
+<div class="panel panel-default">
+
+<table class="table table-bordered table-striped">
+
+<thead>
+<tr>
+<th>History</th>
+        <th>承認</th>
+        <th>TXID</th>
+        <th>種類</th>
+        <th>金額</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+          <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+          <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </tbody>
+  </table>
+  
+</div>
+
+
+
+</div>
+<script>
+
+</script>
+
+ 
+</body>
+<script src="./js/sendEther.js"></script>
+<script src="./js/sendToken.js"></script>
+<script src="./js/keyJson.js"></script>
+<script src="./js/loadJson.js"></script>
+<script src="./js/getBalance.js"></script>
+<script src="./js/token.js"></script>
+
+
+
+</html>
